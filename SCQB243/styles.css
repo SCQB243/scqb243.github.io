@@ -1,0 +1,338 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-section, .confirmation-section {
+    padding: 20px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.menu-item {
+    
+        border: 2px solid #444;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.2s, border-color 0.2s;
+        background-color: #222;
+        color: #fff;
+        width: 150px; /* Set a fixed width for the container */
+        height: 200px; /* Set a fixed height for the container */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden; /* Ensure the image doesn't overflow */
+    }
+
+
+.menu-item.selected {
+    transform: scale(1.05);
+    border-color: #007bff;
+}
+
+.menu-item img {
+    width: 100%; /* Make the image fill the container width */
+    height: 150px; /* Set a fixed height for the image */
+    object-fit: cover; /* Crop the image to fit the container */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
+.confirmation-section {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+}
+
+.total-container {
+    background-color: #053365;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-fields input {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0cbb9ebd;
+    border-radius: 8px; 
+    color: #f3ecec;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#selected-items-list {
+    margin-top: 20px;
+}
+
+.selected-item {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid #444;
+}
+
+/* Order Container */
+#order-container {
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* OK Button */
+.ok-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ok-button:hover {
+    background-color: #0056b3;
+}
+
+.order-item {
+    border: 1px solid #444;
+    padding: 10px;
+    margin-bottom: 4px;
+    background-color: #222;
+}
+/* Pop-up Styles */
+#popup, #custom-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.popup-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.popup-icon.success {
+    color: #4caf50; /* Green color for success icon */
+}
+
+.popup-icon.info {
+    color: #2196f3; /* Blue color for info icon */
+}
+
+#popup input, #custom-popup input {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+#popup button, #custom-popup button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#popup button.close-button, #custom-popup button.close-button {
+    background-color: #ff4444; /* Red color for Close button */
+}
+
+#popup button:hover, #custom-popup button:hover {
+    opacity: 0.9;
+}
+
+#popup-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Selected Item Styles */
+.selected-item {
+    display: flex;
+    justify-content: center; /* Center the text */
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #444;
+    margin-bottom: 4px;
+    background-color: #333;
+    position: relative; /* For positioning the cancel button */
+}
+
+.item-text {
+    text-align: center; /* Center the text */
+}
+
+.cancel-item {
+    cursor: pointer;
+    color: #ff4444; /* Red color for cancel button */
+    position: absolute; /* Position the cancel button */
+    right: 10px; /* Align to the right edge */
+}
+
+.cancel-item:hover {
+    opacity: 0.8;
+}
+
+/* Overlay Styles */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay-content {
+    text-align: center;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.table{
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.total{
+    background-color: #4caf50;
+    font-size: x-large;
+}
+
+/* Blue OK Button */
+.ok-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ok-button:hover {
+    background-color: #0056b3;
+}
+
+/* Password Pop-Up */
+#password-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+}
+
+#password-popup input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ece4e4;
+    border-radius: 4px;
+}
+
+h4 {
+    color: #000;
+}
+
+#password-popup button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#password-popup button:hover {
+    background-color: #0056b3;
+}
+
+/* Pop-Up Backdrop */
+#popup-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}

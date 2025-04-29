@@ -1,0 +1,21 @@
+{
+    "name": "Restaurant Order System",
+    "short_name": "RestaurantOrders",
+    "start_url": "/menu.html",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#0cbb9e",
+    "description": "Systeme de commande pour restaurant",
+    "icons": [
+        {
+            "src": "images/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

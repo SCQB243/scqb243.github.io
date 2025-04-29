@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add manifest for PWA capabilities -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header>
+        <h1>Menu du Restaurant</h1>
+    </header>
+
+    <!-- Food Section -->
+    <section class="menu-section">
+        <h2>Nouritures</h2>
+        <div class="menu-grid" id="food-grid">
+            <!-- Food items will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section class="menu-section">
+        <h2>Boissons</h2>
+        <h3>Boisson sucées</h3>
+        <div class="menu-grid" id="alcoholic-grid">
+            <!-- Alcoholic drinks will be dynamically added here -->
+        </div>
+        <h3>Boisson alcoolisées</h3>
+        <div class="menu-grid" id="juice-grid">
+            <!-- Juices will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Confirmation Section -->
+    <section class="confirmation-section">
+        <h2>Confirmez votre commande</h2>
+        <div class="total-container">
+            <span>Total:</span>
+            <span id="total-amount">0</span>
+        </div>
+        <div class="input-fields">
+            <input type="number" id="table-number" placeholder="Numero de table">
+            
+        </div>
+        <div id="selected-items-list">
+            <!-- Selected items will be dynamically added here -->
+        </div>
+        <button id="confirm-button">Je confirme ma commande</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
